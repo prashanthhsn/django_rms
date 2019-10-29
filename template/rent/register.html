@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  {% load staticfiles %}
+  <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Room managment">
+        <meta name="keywords" content="Hotel, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Room Management </title>
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+    
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="{% static 'rent/css/bootstrap.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/font-awesome.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/flaticon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/linearicons.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/owl.carousel.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/jquery-ui.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/nice-select.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/magnific-popup.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/slicknav.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'rent/css/style.css' %}" type="text/css">
+    <title> Register form </title>
+        <div class="form-group">
+        </div>
+        <link rel="stylesheet" href="{% static 'rent/css/register.css' %}">
+    <body>
+        <form  method="POST" action="register">
+        {% csrf_token %}
+        <div class="Register-box">
+        <h1>Register here!</h1>
+        <div class="textbox">
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="textbox">
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="textbox">
+            <input type="password" name="password1" placeholder="Password">
+        </div>
+        <div class="textbox">
+            <input type="password" name="password2" placeholder="Re-Enter Password">
+        </div>
+    
+        <input type="submit" class="btn btn-primary" value="Sign Up!">
+        <a href='\' input type="submit" class="Register-box1">Back</a>
+        </div>
+        </form>
+        <div>
+        {% for message in messages %}
+            <h3>{{message}}</h3>
+        {% endfor %}
+        </div>
+        </body>
+    </head>
+</html>

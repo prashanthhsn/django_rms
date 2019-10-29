@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title>Home page</title>
+      <form method="post" action=" ">
+        {% csrf_token %}
+      <link rel="stylesheet" href="{% static 'rent/css/login.css' %}">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      {% if error_message %}
+       <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+      {% endif %}
+      <div class="textbox">
+        <input type="text" name="username" placeholder="User name">
+      </div>
+      <div class="textbox">
+        <input type="password" name="password" placeholder="Password">
+      </div>
+      <input type="submit" class="btn btn-primary" value="Sign in">
+      <br\>
+      <a href='\' class="btn1">Home</a>
+      <br\>
+      <br\>
+      <div>
+          {% for message in messages %}
+            <h3>{{message}}</h3>
+          {% endfor %}
+        </div>
+  </body>
+  </div>
+</html>

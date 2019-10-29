@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hotel Template">
+    <meta name="keywords" content="Hotel, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Room Management</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'rent/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/flaticon.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/linearicons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/booking.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section other-page">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo">
+                    
+                </div>
+                <div class="top-widget">   
+                </div>
+                <div class="container">
+                    <nav class="main-menu mobile-menu">
+                        <ul>
+                            <li><a href="\">Home</a></li>
+                            <li><a href="room">Rooms</a></li>
+                            <li><a href="booking">Booking</a>
+                            <li><a href="payment">Payment</a></li>
+                            {% if user.is_authenticated %}
+                            <li><b2>Hello, {{user.username}}</b2></li>
+                            <li><a href="logout">Logout</a></li>
+                            {% else %}
+                            <li><a href="login">Login</a></li>
+                            <li><a href="register">Register</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+    <!-- Js Plugins -->
+    <script src="{% static 'rent/js/booking.js' %}"></script>
+    <script src="{% static 'rent/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'rent/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'rent/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'rent/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'rent/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'rent/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'rent/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'rent/js/main.js' %}"></script>
+</body>
+
+</html>
