@@ -27,13 +27,13 @@
 </head>
 
 <body>
+   
     <div id="preloder">
         <div class="loader"></div>
     </div>
     <header class="header-section">
         <div class="container-fluid">
             <div class="inner-header">
-             
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -44,7 +44,7 @@
                                     <li><a href="booking">Booking</a>
                                     <li><a href="payment">Payment</a></li>
                                     {% if user.is_authenticated %}
-                                    <li><b2>Hello, {{user.username}}</b2></li>
+                                    <li><h5>Hello, {{user.username}}</h5></li>
                                     <li><a href="logout">Logout</a></li>
                                     {% else %}
                                     <li><a href="login">Login</a></li>
@@ -82,6 +82,9 @@
     <script src="{% static 'rent/js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'rent/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'rent/js/main.js' %}"></script>
-</body>
-
+</body><style>
+    h5 {
+        color: white;
+    }
+</style>
 </html>

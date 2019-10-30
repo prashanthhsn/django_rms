@@ -44,19 +44,19 @@
                 </div>
                 <div class="container">
                         <nav class="main-menu mobile-menu">
-                            <ul>
-                                <li><a href="\">Home</a></li>
-                                <li><a href="room">Rooms</a></li>
-                                <li><a href="booking">Booking</a>
-                                <li><a href="payment">Payment</a></li>
-                                {% if user.is_authenticated %}
-                                <li><b2>Hello, {{user.username}}</b2></li>
-                                <li><a href="logout">Logout</a></li>
-                                {% else %}
-                                <li><a href="login">Login</a></li>
-                                <li><a href="register">Register</a></li>
-                                {% endif %}
-                            </ul>
+                                <ul>
+                                        <li><a href="\">Home</a></li>
+                                        <li><a href="room">Rooms</a></li>
+                                        <li><a href="booking">Booking</a>
+                                        <li><a href="payment">Payment</a></li>
+                                        {% if user.is_authenticated %}
+                                        <li><h5>Hello, {{user.username}}</h5></li>
+                                        <li><a href="logout">Logout</a></li>
+                                        {% else %}
+                                        <li><a href="login">Login</a></li>
+                                        <li><a href="register">Register</a></li>
+                                        {% endif %}
+                                    </ul>
                     </nav>
                 </div>
                 <div id="mobile-menu-wrap"></div>
@@ -70,23 +70,27 @@
 <br />
 <br />
     <!-- Header End -->
-    <h2>Choose Your State and City:</h2>
-    <hr />
-    Choose Your State:
-    <select id="slct1" name="slct1" onchange="populate(this.id,'slct2')">
-      <option value=""></option>
-      <option value="Karnataka">Karnataka</option>
-      <option value="Maharastra">Mumbai</option>
-    </select>
-    <hr />
-    Choose Your City:
-    <select id="slct2" name="slct2"></select>
-    <hr />
+    <form method = "POST" action = "room">
+            {% csrf_token %}
+            <select name = "city" >
+                <option value="bangalore">bangalore</option>
+                <option value="mysore">mysore</option>
+            </select>
+            <input  type = "submit" value="Submit">
+            <br />
+            <br />
 
-    <input type="submit" class="btn btn-primary" value="Go" onclick="{{ room_display }}">
+            {% for message in display %}
+                <h3>Room:</h3>       
+                    <h3>{{message}}</h3>             
+                    <div class="float-sm-right">
+                        <a href='booking' input type="submit" class="Register-box1">Book</a>
+                    </div>
+                <br />
+                <hr />
+            {% endfor %}
+            </form>
     
-
-
     <!-- Js Plugins -->
     <script src="{% static 'rent/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'rent/js/bootstrap.min.js' %}"></script>
@@ -97,5 +101,10 @@
     <script src="{% static 'rent/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'rent/js/main.js' %}"></script>
     <script src="{% static 'rent/js/room.js' %}"></script>
-</body>
+</body><style>
+        h5 {
+            color: white;
+        }
+    </style>
+
 </html>

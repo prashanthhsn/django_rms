@@ -46,19 +46,19 @@
                 </div>
                 <div class="container">
                     <nav class="main-menu mobile-menu">
-                        <ul>
-                            <li><a href="\">Home</a></li>
-                            <li><a href="room">Rooms</a></li>
-                            <li><a href="booking">Booking</a>
-                            <li><a href="payment">Payment</a></li>
-                            {% if user.is_authenticated %}
-                            <li><b2>Hello, {{user.username}}</b2></li>
-                            <li><a href="logout">Logout</a></li>
-                            {% else %}
-                            <li><a href="login">Login</a></li>
-                            <li><a href="register">Register</a></li>
-                            {% endif %}                        
-                        </ul>
+                            <ul>
+                                    <li><a href="\">Home</a></li>
+                                    <li><a href="room">Rooms</a></li>
+                                    <li><a href="booking">Booking</a>
+                                    <li><a href="payment">Payment</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li><h5>Hello, {{user.username}}</h5></li>
+                                    <li><a href="logout">Logout</a></li>
+                                    {% else %}
+                                    <li><a href="login">Login</a></li>
+                                    <li><a href="register">Register</a></li>
+                                    {% endif %}
+                                </ul>
                     </nav>
                 </div>
                 <div id="mobile-menu-wrap"></div>
@@ -113,6 +113,10 @@
     <script src="{% static 'rent/js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'rent/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'rent/js/main.js' %}"></script>
-</body>
+</body><style>
+        h5 {
+            color: white;
+        }
+    </style>
 
 </html>

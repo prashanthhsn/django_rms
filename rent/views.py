@@ -6,7 +6,6 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import room
 
-
 def homepage(request):
     return render(request, 'rent/index.html')
 
@@ -61,4 +60,11 @@ def payment(request):
     return render(request, 'rent/payment.html')
 
 def rooms(request):
-    return render(request, 'rent/room.html')
+    if request.method == "POST":
+        city = request.POST['city']
+        display = room.objects.filter(city = city)
+        view = list(display)
+        context = {'display': view}
+        return render(request, 'rent/room.html', context)
+    else:
+        return render(request, 'rent/room.html')
