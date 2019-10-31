@@ -2,32 +2,10 @@
 <html>
   {% load staticfiles %}
   <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Room managment">
-        <meta name="keywords" content="Hotel, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Room Management </title>
-    
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
-    
-        <!-- Css Styles -->
-        <link rel="stylesheet" href="{% static 'rent/css/bootstrap.min.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/font-awesome.min.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/flaticon.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/linearicons.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/owl.carousel.min.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/jquery-ui.min.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/nice-select.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/magnific-popup.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/slicknav.min.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'rent/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'rent/css/register.css' %}">
     <title> Register form </title>
         <div class="form-group">
         </div>
-        <link rel="stylesheet" href="{% static 'rent/css/register.css' %}">
     <body>
         <form  method="POST" action="register">
         {% csrf_token %}
@@ -50,7 +28,7 @@
         <a href='\' input type="submit" class="Register-box1">Back</a>
         </div>
         </form>
-        <div>
+        <div class="float-sm-right">
         {% for message in messages %}
             <h3>{{message}}</h3>
         {% endfor %}

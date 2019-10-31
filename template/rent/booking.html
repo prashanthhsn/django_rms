@@ -38,26 +38,25 @@
     <header class="header-section other-page">
         <div class="container-fluid">
             <div class="inner-header">
-                <div class="logo">
-                    
+                <div class="logo">   
                 </div>
                 <div class="top-widget">   
                 </div>
                 <div class="container">
                     <nav class="main-menu mobile-menu">
                             <ul>
-                                    <li><a href="\">Home</a></li>
-                                    <li><a href="room">Rooms</a></li>
-                                    <li><a href="booking">Booking</a>
-                                    <li><a href="payment">Payment</a></li>
-                                    {% if user.is_authenticated %}
-                                    <li><h5>Hello, {{user.username}}</h5></li>
-                                    <li><a href="logout">Logout</a></li>
-                                    {% else %}
-                                    <li><a href="login">Login</a></li>
-                                    <li><a href="register">Register</a></li>
-                                    {% endif %}
-                                </ul>
+                                <li><a href="\">Home</a></li>
+                                <li><a href="room">Rooms</a></li>
+                                <li><a href="booking">Booking</a>
+                                <!-- <li><a href="payment">Payment</a></li> -->
+                                {% if user.is_authenticated %}
+                                <li><h5>Hello, {{user.username}}</h5></li>
+                                <li><a href="logout">Logout</a></li>
+                                {% else %}
+                                <li><a href="login">Login</a></li>
+                                <li><a href="register">Register</a></li>
+                                {% endif %}
+                            </ul>
                     </nav>
                 </div>
                 <div id="mobile-menu-wrap"></div>
@@ -71,6 +70,8 @@
 <br />
 <br />
 
+
+{{book}}
     <!-- Js Plugins -->
     <script src="{% static 'rent/js/booking.js' %}"></script>
     <script src="{% static 'rent/js/jquery-3.3.1.min.js' %}"></script>
@@ -84,6 +85,9 @@
 </body><style>
         h5 {
             color: white;
+        }
+        body{
+            background-image: url(/media/slider-1.jpg);
         }
     </style>
 

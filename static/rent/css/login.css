@@ -12,14 +12,7 @@ font-family:Arial;
   transform: translate(-105%,-100%);
   color: white;
 }
-.login-box{
-  width: 280px;
-  position: absolute;
-  top: 40%;
-  left: 90%;
-  transform: translate(-105%,-100%);
-  color: white;
-}
+
 .textbox{
   width: 100%;
   overflow: hidden;

@@ -24,6 +24,6 @@ urlpatterns = [
    path('login', views.user_login, name="login"),
    path('logout', views.user_logout, name='logout'),
    path('booking', views.booking, name="Booking" ),
-   path('payment', views.payment, name="payment"),
+#    path('payment', views.payment, name="payment"),
    path('room', views.rooms, name="room"),
 ]

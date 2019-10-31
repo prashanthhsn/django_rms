@@ -48,7 +48,7 @@
                                         <li><a href="\">Home</a></li>
                                         <li><a href="room">Rooms</a></li>
                                         <li><a href="booking">Booking</a>
-                                        <li><a href="payment">Payment</a></li>
+                                        <!-- <li><a href="payment">Payment</a></li> -->
                                         {% if user.is_authenticated %}
                                         <li><h5>Hello, {{user.username}}</h5></li>
                                         <li><a href="logout">Logout</a></li>
@@ -70,7 +70,7 @@
 <br />
 <br />
     <!-- Header End -->
-    <form method = "POST" action = "room">
+    <form method = "POST" action = "room" id="Systemform">
             {% csrf_token %}
             <select name = "city" >
                 <option value="bangalore">bangalore</option>
@@ -82,14 +82,17 @@
 
             {% for message in display %}
                 <h3>Room:</h3>       
-                    <h3>{{message}}</h3>             
+                    <!-- <h3>&nbsp&nbsp&nbsp&nbsp Room_id = {{message.id}}</h3> -->
+                    <h3>&nbsp&nbsp&nbsp&nbsp City = {{message.city}}</h3>
+                    <h3>&nbsp&nbsp&nbsp&nbsp Rent = {{message.rent}}</h3> 
+                    <h3>&nbsp&nbsp&nbsp&nbsp Address = {{message.features}}</h3>           
                     <div class="float-sm-right">
-                        <a href='booking' input type="submit" class="Register-box1">Book</a>
+                        <a href='booking' input type="submit" val="id" form="Systemform" class="btn btn-primary">Book</a>
                     </div>
                 <br />
                 <hr />
             {% endfor %}
-            </form>
+    </form>
     
     <!-- Js Plugins -->
     <script src="{% static 'rent/js/jquery-3.3.1.min.js' %}"></script>
@@ -105,6 +108,12 @@
         h5 {
             color: white;
         }
+        body{
+            background-image: url(/media/slider-1.jpg);
+        }
+        select {
+            margin: 0.5em;
+            color: blue;
+        }
     </style>
-
 </html>
