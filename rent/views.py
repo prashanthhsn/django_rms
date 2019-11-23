@@ -68,12 +68,7 @@ def rooms(request):
         display = room.objects.filter(city = city)
         view = list(display)
         context = {'display': view}
+        room.flag = False
         return render(request, 'rent/room.html', context)
-        # if request.method == "POST":
-        #     b_id = request.POST['id']
-        #     display = room.objects.get(id = b_id)
-        #     view = list(display)
-        #     context = {'display': view}
-        #     return render(request, 'rent/booking.html', context)
     else:
         return render(request, 'rent/room.html')

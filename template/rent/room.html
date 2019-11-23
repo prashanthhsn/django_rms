@@ -47,7 +47,7 @@
                                 <ul>
                                         <li><a href="\">Home</a></li>
                                         <li><a href="room">Rooms</a></li>
-                                        <li><a href="booking">Booking</a>
+                                        <!--<li><a href="booking">Booking</a> -->
                                         <!-- <li><a href="payment">Payment</a></li> -->
                                         {% if user.is_authenticated %}
                                         <li><h5>Hello, {{user.username}}</h5></li>
@@ -56,7 +56,7 @@
                                         <li><a href="login">Login</a></li>
                                         <li><a href="register">Register</a></li>
                                         {% endif %}
-                                    </ul>
+                                </ul>
                     </nav>
                 </div>
                 <div id="mobile-menu-wrap"></div>
@@ -82,12 +82,12 @@
 
             {% for message in display %}
                 <h3>Room:</h3>       
-                    <!-- <h3>&nbsp&nbsp&nbsp&nbsp Room_id = {{message.id}}</h3> -->
+                    <h3>&nbsp&nbsp&nbsp&nbsp Room_id = {{message.id}}</h3> 
                     <h3>&nbsp&nbsp&nbsp&nbsp City = {{message.city}}</h3>
                     <h3>&nbsp&nbsp&nbsp&nbsp Rent = {{message.rent}}</h3> 
-                    <h3>&nbsp&nbsp&nbsp&nbsp Address = {{message.features}}</h3>           
+                    <h3>&nbsp&nbsp&nbsp&nbsp Address = {{message.features}}</h3>    
                     <div class="float-sm-right">
-                        <a href='booking' input type="submit" val="id" form="Systemform" class="btn btn-primary">Book</a>
+                       <input type="submit"  form="Systemform" class="btn btn-primary"></input>
                     </div>
                 <br />
                 <hr />

@@ -47,17 +47,17 @@
                 <div class="container">
                     <nav class="main-menu mobile-menu">
                             <ul>
-                                    <li><a href="\">Home</a></li>
-                                    <li><a href="room">Rooms</a></li>
-                                    <li><a href="booking">Booking</a>
-                                    <li><a href="payment">Payment</a></li>
-                                    {% if user.is_authenticated %}
-                                    <li><h5>Hello, {{user.username}}</h5></li>
-                                    <li><a href="logout">Logout</a></li>
-                                    {% else %}
-                                    <li><a href="login">Login</a></li>
-                                    <li><a href="register">Register</a></li>
-                                    {% endif %}
+                                <li><a href="\">Home</a></li>
+                                <li><a href="room">Rooms</a></li>
+                                <!--<li><a href="booking">Booking</a> -->
+                                <!-- <li><a href="payment">Payment</a></li> -->
+                                {% if user.is_authenticated %}
+                                <li><h5>Hello, {{user.username}}</h5></li>
+                                <li><a href="logout">Logout</a></li>
+                                {% else %}
+                                <li><a href="login">Login</a></li>
+                                <li><a href="register">Register</a></li>
+                                {% endif %}
                                 </ul>
                     </nav>
                 </div>
