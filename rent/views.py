@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 def homepage(request):
     return render(request, 'rent/index.html')
 
-def register(request):  
+def register(request):
     if request.method == 'POST':
         Username = request.POST['username']
         Email = request.POST['email']
@@ -32,7 +32,7 @@ def register(request):
         else:
             messages.error(request, 'Passwords not matching!')
             return redirect('signup')
-    else:   
+    else:
         return render(request,'rent/register.html')
 
 
@@ -45,30 +45,61 @@ def user_login(request):
             auth.login(request,user)
             return redirect('index')
         else:
-            messages.error(request, 'Invalid credentials' ) 
-            return redirect('login')  
+            messages.error(request, 'Invalid credentials' )
+            return redirect('login')
     else:
         return render(request, 'rent/login.html')
 
 def user_logout(request):
-    auth.logout(request) 
+    auth.logout(request)
     #messages.info(request, "Logged out successfully!")
     return redirect('index')
 
 @login_required
 def booking(request):
-    return render(request, 'rent/booking.html')
+    display = room.objects.get(flag = True)
+    display.flag = False
+    display.save()
+    view = []
+    view = [display]
+    context = {'display' : view}
+    string = 'rent/room.html'
+    return render(request, 'rent/booking.html',context)
+
+
 
 # def payment(request):
 #     return render(request, 'rent/payment.html')
 @login_required
 def rooms(request):
     if request.method == "POST":
-        city = request.POST['city']
-        display = room.objects.filter(city = city)
-        view = list(display)
-        context = {'display': view}
-        room.flag = False
-        return render(request, 'rent/room.html', context)
+        value = request.POST.get('Book',None)
+        val = int(value)
+        if val == 10:
+            city = request.POST['city']
+            display = room.objects.filter(city = city,booked = False)
+            view = list(display)
+            context = {'display': view}
+            string = 'rent/room.html'
+            return render(request, 'rent/room.html', context)
+        else:
+            values = request.POST.get('Book',None)
+            myRoom = room.objects.get(id = values)
+            myRoom.flag = True
+            myRoom.save()
+            return redirect('/booking')
     else:
         return render(request, 'rent/room.html')
+
+@login_required
+def confirmButton(request):
+    bookedID = request.POST['Book']
+    # print(bookedID)
+    # print("hi")
+    display = room.objects.get(id = bookedID )
+    display.booked = True
+    # booki = display.booked
+    # print(booki)
+    display.save()
+    return redirect('/')
+    

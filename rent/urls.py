@@ -23,7 +23,8 @@ urlpatterns = [
    path('register', views.register, name='signup'),
    path('login', views.user_login, name="login"),
    path('logout', views.user_logout, name='logout'),
-   path('booking', views.booking, name="Booking" ),
-#    path('payment', views.payment, name="payment"),
+   path('booking', views.booking, name="booking" ),
+#  path('payment', views.payment, name="payment"),
    path('room', views.rooms, name="room"),
+   path('confirmButton', views.confirmButton, name="confirmbutton"),
 ]
