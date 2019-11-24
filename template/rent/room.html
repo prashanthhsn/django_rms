@@ -43,20 +43,20 @@
                 <div class="top-widget">
                 </div>
                 <div class="container">
-                        <nav class="main-menu mobile-menu">
-                                <ul>
-                                        <li><a href="\">Home</a></li>
-                                        <li><a href="room">Rooms</a></li>
-                                        <!--<li><a href="booking">Booking</a> -->
-                                        <!-- <li><a href="payment">Payment</a></li> -->
-                                        {% if user.is_authenticated %}
-                                        <li><h5>Hello, {{user.username}}</h5></li>
-                                        <li><a href="logout">Logout</a></li>
-                                        {% else %}
-                                        <li><a href="login">Login</a></li>
-                                        <li><a href="register">Register</a></li>
-                                        {% endif %}
-                                </ul>
+                    <nav class="main-menu mobile-menu">
+                            <ul>
+                                <li><a href="\">Home</a></li>
+                                <li><a href="room">Rooms</a></li>
+                                <!-- <li><a href="booking">Booking</a> -->
+                                <!-- <li><a href="payment">Payment</a></li> -->
+                                {% if user.is_authenticated %}
+                                <li><h5>Hello, {{user.username}}</h5></li>
+                                <li><a href="logout">Logout</a></li>
+                                {% else %}
+                                <li><a href="login">Login</a></li>
+                                <li><a href="register">Register</a></li>
+                                {% endif %}
+                            </ul>
                     </nav>
                 </div>
                 <div id="mobile-menu-wrap"></div>
@@ -76,24 +76,25 @@
                 <option value="bangalore">bangalore</option>
                 <option value="mysore">mysore</option>
             </select>
-            <input  type = "submit" value="Submit">
+            <button  type = "submit"  name="Book"  value="10">Search</button>
             <br />
             <br />
 
             {% for message in display %}
-                <h3>Room:</h3>       
-                    <h3>&nbsp&nbsp&nbsp&nbsp Room_id = {{message.id}}</h3> 
-                    <h3>&nbsp&nbsp&nbsp&nbsp City = {{message.city}}</h3>
-                    <h3>&nbsp&nbsp&nbsp&nbsp Rent = {{message.rent}}</h3> 
-                    <h3>&nbsp&nbsp&nbsp&nbsp Address = {{message.features}}</h3>    
-                    <div class="float-sm-right">
-                       <input type="submit"  form="Systemform" class="btn btn-primary"></input>
+                <h4>Room:</h4>       
+                    <h4>&nbsp&nbsp&nbsp&nbsp Room no = {{message.id}}</h4> 
+                    <h4>&nbsp&nbsp&nbsp&nbsp City = {{message.city}}</h4>
+                    <h4>&nbsp&nbsp&nbsp&nbsp Rent = {{message.rent}}</h4> 
+                    <h4>&nbsp&nbsp&nbsp&nbsp Address = {{message.features}}</h4>    
+                    <div class="float-sm-right" >
+                      <button type="submit" name="Book" value="{{message.id}}" form="Systemform" class="btn btn-primary">Book </button>
+                      <a href='/booking'></a>
                     </div>
                 <br />
                 <hr />
             {% endfor %}
     </form>
-    
+    {{context1}}
     <!-- Js Plugins -->
     <script src="{% static 'rent/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'rent/js/bootstrap.min.js' %}"></script>
